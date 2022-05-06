@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
   spec.summary      = "A CocoaPods library written in Swift"
 
   spec.description  = <<-DESC
-This CocoaPods library helps you perform calculation.
+This CocoaPods library helps you add Tags.
                    DESC
 
   spec.homepage     = "https://github.com/smoothCiph/SwiftTags"
