@@ -7,14 +7,14 @@
 
 import UIKit
 
-@IBDesignable class TagsView: UIView {
+@IBDesignable open class TagsView: UIView {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
     var itemWidth  = 100
     var itemHeight = 40
     
-    var items = [String]()
+   public var items = [String]()
    
     
     override init(frame: CGRect) {
@@ -22,16 +22,17 @@ import UIKit
         initTags()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         initTags()
         
     }
     
     private func initTags(){
-        let nib = UINib(nibName: "TagsView", bundle: nil)
+        let nib = UINib(nibName: "TagsView", bundle: Bundle(identifier: "Rohan.SwiftTags"))
         nib.instantiate(withOwner: self, options: nil)
         collectionView.backgroundColor = .blue
+        
     }
     
 
@@ -40,21 +41,21 @@ import UIKit
 }
 extension TagsView:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCollectionCell", for: indexPath) as! TagCollectionCell
         
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: itemWidth, height: itemHeight)
     }
     
