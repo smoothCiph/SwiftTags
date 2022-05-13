@@ -13,6 +13,8 @@ import UIKit
 public class SwiftTagsCollection:UICollectionView{
     
     public var items = [String]()
+    public var itemWidth = 100
+    public var itemHeight = 50
     
     
    
@@ -42,7 +44,7 @@ public class SwiftTagsCollection:UICollectionView{
     
 }
 
-extension SwiftTagsCollection : UICollectionViewDataSource {
+extension SwiftTagsCollection : UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
     }
@@ -55,6 +57,10 @@ extension SwiftTagsCollection : UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCollectionCell", for: indexPath) as! TagCollectionCell
         
         return cell
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: itemWidth, height: itemHeight)
     }
     
    
