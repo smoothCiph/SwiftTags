@@ -80,11 +80,11 @@
 		81425AA02825298B00A3CA25 /* SwiftTags */ = {
 			isa = PBXGroup;
 			children = (
+				81C50305282E40AA006A0F57 /* SwiftTagsCollection.swift */,
 				81425AB9282529A100A3CA25 /* TagCollectionCell.swift */,
 				81425AB8282529A100A3CA25 /* TagCollectionCell.xib */,
 				81425AA12825298B00A3CA25 /* SwiftTags.h */,
 				81425AA22825298B00A3CA25 /* SwiftTags.docc */,
-				81C50305282E40AA006A0F57 /* SwiftTagsCollection.swift */,
 			);
 			path = SwiftTags;
 			sourceTree = "<group>";
@@ -359,7 +359,6 @@
 				ARCHS = (
 					"$(ARCHS_STANDARD)",
 					x86_64,
-					"x86_64-apple-ios-simulator",
 				);
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -393,7 +392,6 @@
 				ARCHS = (
 					"$(ARCHS_STANDARD)",
 					x86_64,
-					"x86_64-apple-ios-simulator",
 				);
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

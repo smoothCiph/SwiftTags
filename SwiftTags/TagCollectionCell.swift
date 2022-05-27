@@ -12,7 +12,12 @@ class TagCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var tagBackgroundView: UIView!
     @IBOutlet weak var tagNameLabel: UILabel!
+    @IBOutlet weak var tagViewHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var tagLeadingSpce: NSLayoutConstraint!
+    var tagNameColor:UIColor?
+     var tagBackgroundColor:UIColor?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,7 +25,11 @@ class TagCollectionCell: UICollectionViewCell {
     }
     
    private func setUpCell(){
-       tagBackgroundView.layer.cornerRadius = tagBackgroundView.frame.height / 2
+       print("setUpCell called")
+       tagBackgroundView.layer.cornerRadius = tagViewHeight.constant / 2
+       tagBackgroundView.backgroundColor = tagBackgroundColor ?? .darkGray
+       contentView.backgroundColor = .clear
+       tagNameLabel.textColor = tagNameColor ?? .white
     }
 
 }
